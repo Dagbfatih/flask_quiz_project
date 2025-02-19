@@ -8,7 +8,7 @@ class ScoreService:
             return None
         
         # Temporarily assumed that scores will be taken as dictionary, not list[Score]
-        return max(scores, key=lambda score: score['score'])
+        return max(scores, key=lambda score: score.score)
     
     @staticmethod
     def latest(scores: list[Score]) -> Score | None:
@@ -16,4 +16,4 @@ class ScoreService:
             return None
         
         # Find the score with the latest date
-        return max(scores, key=lambda score: score['date'])
+        return max(scores, key=lambda score: score.date)

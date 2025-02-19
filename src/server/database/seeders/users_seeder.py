@@ -10,6 +10,8 @@ class UserSeeder(BaseSeeder.BaseSeeder):
         faker = Faker()
 
         users = [
+            User(full_name="user", password="12345678"),
+            User(full_name="user2", password="12345678"),
             User(full_name=faker.name(), password="12345678"),
             User(full_name=faker.name(), password="12345678"),
             User(full_name=faker.name(), password="12345678"),

@@ -4,7 +4,8 @@ app.py
 Type `flask run` command to run the application
 """
 
-from flask import Flask
+from http.client import HTTPException
+from flask import Flask, jsonify, redirect
 from flask_injector import FlaskInjector
 
 from config import Config
@@ -27,10 +28,11 @@ def create_app(config_class=Config):
     ###############################
     from src.client.routes.index import index_bp
     from src.client.routes.auth import auth_bp
+
     app.register_blueprint(index_bp, url_prefix="/")
     app.register_blueprint(auth_bp, url_prefix="/auth")
 
-    ############################### 
+    ###############################
     # Server Blueprints
     ###############################
     from src.server.routes.users import users_bp
@@ -38,6 +40,7 @@ def create_app(config_class=Config):
     from src.server.routes.exams import exams_bp
     from src.server.routes.scores import scores_bp
     from src.server.routes.auth import auth_api_bp
+
     app.register_blueprint(users_bp, url_prefix="/api/users")
     app.register_blueprint(questions_bp, url_prefix="/api/questions")
     app.register_blueprint(exams_bp, url_prefix="/api/exams")
@@ -50,10 +53,20 @@ def create_app(config_class=Config):
 
     # Authentication
     login_manager.login_manager.init_app(app)
+
     @login_manager.login_manager.user_loader
     def load_user(user_id):
         return User.query.get(int(user_id))
 
     FlaskInjector(app=app, modules=[configure])
+
+    # Exception Handling
+    @app.errorhandler(Exception)
+    def handle_error(e):
+        code = 500
+        if isinstance(e, HTTPException):
+            code = e.code
+        redirect("/")
+        return jsonify(error=str(e)), code
 
     return app
