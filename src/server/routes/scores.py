@@ -63,9 +63,6 @@ def submit_quiz(scoreService: ScoreService):
     correct_count = 0
 
     print(data)
-    print('aaaaaaaaa')
-    print('aaaaaaaaa')
-    print('aaaaaaaaa')
 
     # Check each question's answer
     for question in questions:
