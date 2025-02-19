@@ -7,6 +7,7 @@ Type `flask run` command to run the application
 from http.client import HTTPException
 from flask import Flask, jsonify, redirect
 from flask_injector import FlaskInjector
+from flask_login import current_user
 
 from config import Config
 from src.server.commands import db_seed, migration_fresh
@@ -59,6 +60,11 @@ def create_app(config_class=Config):
         return User.query.get(int(user_id))
 
     FlaskInjector(app=app, modules=[configure])
+
+    @app.context_processor
+    def inject_globals():
+        if current_user:
+            return dict(user=current_user)
 
     # Exception Handling
     @app.errorhandler(Exception)
