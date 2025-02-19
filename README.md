@@ -84,6 +84,7 @@ When you start the application and visit the root (`http://localhost:5000/`), yo
 There are 6 predefined users with same password:
 
 **Usernames:**
+
 `user`
 
 `user2`
