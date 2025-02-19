@@ -24,7 +24,7 @@ class ScoreSeeder(BaseSeeder.BaseSeeder):
                 for _ in range(3):
                     score = Score(
                         subject=faker.word(),
-                        score=random.randint(50, 100),
+                        score=random.randint(50, 85),
                         date=faker.date_time_this_year(),
                         user_id=user.id,
                         exam_id=exam.id,

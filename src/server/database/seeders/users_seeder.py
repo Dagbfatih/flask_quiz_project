@@ -12,10 +12,10 @@ class UserSeeder(BaseSeeder.BaseSeeder):
         users = [
             User(full_name="user", password="12345678"),
             User(full_name="user2", password="12345678"),
-            User(full_name=faker.name(), password="12345678"),
-            User(full_name=faker.name(), password="12345678"),
-            User(full_name=faker.name(), password="12345678"),
-            User(full_name=faker.name(), password="12345678"),
+            User(full_name="user3", password="12345678"),
+            User(full_name="user4", password="12345678"),
+            User(full_name="user5", password="12345678"),
+            User(full_name="user6", password="12345678"),
         ]
 
         # Insert users into the database
