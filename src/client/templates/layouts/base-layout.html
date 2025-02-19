@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block basecontent %}
+<div class="content">
+  <div class="container-fluid h-100">{% block content %}{% endblock %}</div>
+</div>
+
+{% include
+  'components/navigation/footer.html' %}
+{% endblock %}

@@ -1,0 +1,61 @@
+{% extends 'layouts/base-layout.html' %} {% block content %}
+<style>
+  html,
+  body {
+    height: 100%;
+  }
+
+  .form-signin {
+    max-width: 330px;
+    padding: 1rem;
+  }
+
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+</style>
+
+<div class="d-flex align-items-center py-4 bg-body-tertiary h-100">
+  <main class="form-signin w-100 h-100 m-auto">
+    <form method="POST" action="/api/auth/login">
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+      <div class="form-floating">
+        <input
+          type="text"
+          class="form-control"
+          id="full_name_input"
+          placeholder="full_name"
+          name="full_name"
+        />
+        <label for="full_name_input">Full name</label>
+      </div>
+      <div class="form-floating">
+        <input
+          type="password"
+          class="form-control"
+          id="floatingPassword"
+          placeholder="Password"
+          name="password"
+        />
+        <label for="floatingPassword">Password</label>
+      </div>
+
+      <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+    </form>
+  </main>
+</div>
+
+{% endblock %}
