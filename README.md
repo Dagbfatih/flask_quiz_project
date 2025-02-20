@@ -102,6 +102,14 @@ There are 6 predefined users with same password:
 
 Try one of them and start solving quizzes.
 
+## Postman Collection
+
+You can easily test the api endpoints by collection.
+
+I uploaded a postman collection (v2.1) at the root of the source codes. The collection has all API endpoints.
+
+Do not forget to change `baseUrl` and `apiUrl` variables in `FlaskDemo` global variables section.
+
 # Deployment
 
 This project is deployed at [Quiz Websitesine Hoşgeldiniz! - FlaskApp](https://dagbfatih.pythonanywhere.com/).
