@@ -1,0 +1,498 @@
+{
+	"info": {
+		"_postman_id": "302228ee-aca2-4bf2-99b1-1a48b7876df1",
+		"name": "FlaskDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14558360"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"full_name\":\"Fatih Dağyt\",\r\n    \"password\":\"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/users/create",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"users",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/users/getlist",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"users",
+								"getlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"full_name\": \"Fatih Dağyt\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/users/update/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"users",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/users/delete/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"users",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "questions",
+			"item": [
+				{
+					"name": "getList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/questions/getlist",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"questions",
+								"getlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"question_text\": \"What is the capital of France?\",\r\n  \"choice_a\": \"Berlin\",\r\n  \"choice_b\": \"Madrid\",\r\n  \"choice_c\": \"Paris\",\r\n  \"choice_d\": \"Rome\",\r\n  \"correct_answer\": \"C\",\r\n  \"exam_id\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/questions/create",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"questions",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"question_text\": \"What is the capital of France?????????\",\r\n  \"choice_a\": \"BerlinYT\",\r\n  \"choice_b\": \"Madrid\",\r\n  \"choice_c\": \"ParisSSSS\",\r\n  \"choice_d\": \"Rome\",\r\n  \"correct_answer\": \"D\",\r\n  \"exam_id\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/questions/update/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"questions",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/questions/delete/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"questions",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "exams",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Midterm Exam on Data Structures\",\r\n    \"description\": \"This is a midterm exam focusing on data structures, including linked lists, trees, and graphs.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/exams/create",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"exams",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/exams/getlist",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"exams",
+								"getlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/exams/delete/2",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"exams",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Midterm Exam on Data Structures\",\r\n  \"description\": \"This is a midterm exam focusing on data structures, including linked lists, trees, and graphs.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/exams/update/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"exams",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createWithRelations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"AXAXAXMidterm Exam on Data Structures\",\r\n  \"description\": \"This is a midterm exam focusing on data structures, including linked lists, trees, and graphs.\",\r\n  \"questions\": [\r\n    {\r\n      \"question_text\": \"What is a linked list?\",\r\n      \"choice_a\": \"A collection of nodes\",\r\n      \"choice_b\": \"A collection of arrays\",\r\n      \"choice_c\": \"A stack data structure\",\r\n      \"choice_d\": \"A queue data structure\",\r\n      \"correct_answer\": \"A\",\r\n      \"exam_id\": 1\r\n    },\r\n    {\r\n      \"question_text\": \"What is a binary tree?\",\r\n      \"choice_a\": \"A tree with nodes having at most two children\",\r\n      \"choice_b\": \"A tree with nodes having three children\",\r\n      \"choice_c\": \"A graph-based tree\",\r\n      \"choice_d\": \"A tree with no child nodes\",\r\n      \"correct_answer\": \"A\",\r\n      \"exam_id\": 1\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/exams/create",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"exams",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "scores",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"Mathematics\",\r\n  \"score\": 45,\r\n  \"user_id\": 1,\r\n  \"exam_id\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/scores/create",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"scores",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/scores/getlist?user_id=1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"scores",
+								"getlist"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/scores/delete/2",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"scores",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"Mathematics\",\r\n  \"score\": 90.2,\r\n  \"user_id\": 1,\r\n  \"exam_id\": 2\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/scores/update/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"scores",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createWithRelations",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"AXAXAXMidterm Exam on Data Structures\",\r\n  \"description\": \"This is a midterm exam focusing on data structures, including linked lists, trees, and graphs.\",\r\n  \"questions\": [\r\n    {\r\n      \"question_text\": \"What is a linked list?\",\r\n      \"choice_a\": \"A collection of nodes\",\r\n      \"choice_b\": \"A collection of arrays\",\r\n      \"choice_c\": \"A stack data structure\",\r\n      \"choice_d\": \"A queue data structure\",\r\n      \"correct_answer\": \"A\",\r\n      \"exam_id\": 1\r\n    },\r\n    {\r\n      \"question_text\": \"What is a binary tree?\",\r\n      \"choice_a\": \"A tree with nodes having at most two children\",\r\n      \"choice_b\": \"A tree with nodes having three children\",\r\n      \"choice_c\": \"A graph-based tree\",\r\n      \"choice_d\": \"A tree with no child nodes\",\r\n      \"correct_answer\": \"A\",\r\n      \"exam_id\": 1\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/scores/create",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"scores",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000",
+			"type": "string"
+		},
+		{
+			"key": "apiUrl",
+			"value": "http://localhost:5000/api",
+			"type": "string"
+		}
+	]
+}
